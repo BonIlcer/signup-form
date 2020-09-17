@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/App.scss";
-import Header from "./HeaderFormGroup";
+import HeaderFormGroup from "./HeaderFormGroup";
 import InputWithLabels from "./InputWithLabels";
+import PasswordFormGroup from "./PasswordFormGroup";
 import SelectCity from "./SelectCity";
 
 function App() {
@@ -18,15 +19,10 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={onSubmitForm}>
-        <Header userName={userName} />
+        <HeaderFormGroup userName={userName} />
         <SelectCity />
 
-        <InputWithLabels
-          type="password"
-          text="Пароль"
-          inputName="password"
-          note="Ваш новый пароль должен содержать не менее 5 символов"
-        />
+        <PasswordFormGroup />
         <input type="submit" value="submit" />
       </form>
     </div>
