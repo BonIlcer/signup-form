@@ -3,7 +3,16 @@ import "../styles/InputWithLabels.scss";
 import blurOnEnter from "../inputBlurOnEnter";
 
 function InputWithLabels(props) {
-  const { type, text, inputName, note, onChange, onBlur } = props;
+  const {
+    type,
+    text,
+    inputName,
+    note,
+    onChange,
+    onBlur,
+    errorMsg,
+    isValid,
+  } = props;
   return (
     <div className="form-group">
       <label>
@@ -17,6 +26,7 @@ function InputWithLabels(props) {
           onKeyDown={blurOnEnter}
           onBlur={onBlur}
         />
+        <p style={{ opacity: isValid ? "0" : "1" }}>{errorMsg}</p>
       </label>
 
       <p>{note}</p>
