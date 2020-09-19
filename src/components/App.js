@@ -3,6 +3,7 @@ import "../styles/App.scss";
 import triggerEvent from "../triggerEvent";
 import EmailFormGroup from "./EmailFormGroup";
 import HeaderFormGroup from "./HeaderFormGroup";
+import NewsletterFormGroup from "./NewsletterFormGroup";
 import PasswordFormGroup from "./PasswordFormGroup";
 import SelectCityFormGroup from "./SelectCityFormGroup";
 
@@ -41,6 +42,9 @@ function App() {
         <PasswordFormGroup />
         <hr />
         <EmailFormGroup />
+
+        <NewsletterFormGroup />
+
         <input type="submit" value="Изменить" />
 
         <p>
