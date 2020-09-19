@@ -18,8 +18,8 @@ function PasswordFormGroup() {
     if (e.target.value === "") {
       setValid1(false);
     } else if (e.target.value.length < 5) {
-      setValid1(false);
       setErrMsg1("Используйте не менее 5 символов");
+      setValid1(false);
     } else {
       setValid1(true);
     }
@@ -29,8 +29,8 @@ function PasswordFormGroup() {
     if (e.target.value === "") {
       setValid2(false);
     } else if (e.target.value !== password) {
-      setValid2(false);
       setErrMsg2("Пароли не совпадают");
+      setValid2(false);
     } else {
       setValid2(true);
     }

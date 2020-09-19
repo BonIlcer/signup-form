@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/App.scss";
+import EmailFormGroup from "./EmailFormGroup";
 import HeaderFormGroup from "./HeaderFormGroup";
 import PasswordFormGroup from "./PasswordFormGroup";
 import SelectCityFormGroup from "./SelectCityFormGroup";
@@ -25,7 +26,9 @@ function App() {
         <hr />
         <PasswordFormGroup />
         <hr />
+        <EmailFormGroup />
         <input type="submit" value="Изменить" />
+
         <p>
           {"последние изменения " +
             updateDate.toLocaleString("ru", {
