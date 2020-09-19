@@ -27,6 +27,7 @@ function EmailFormGroup() {
         onBlur={validateEmail}
         errorMsg={errMsg}
         isValid={isValid}
+        id="email"
       />
     </div>
   );

@@ -1,18 +1,32 @@
 import React, { useState } from "react";
 import "../styles/App.scss";
+import triggerEvent from "../triggerEvent";
 import EmailFormGroup from "./EmailFormGroup";
 import HeaderFormGroup from "./HeaderFormGroup";
 import PasswordFormGroup from "./PasswordFormGroup";
 import SelectCityFormGroup from "./SelectCityFormGroup";
 
+function triggerBlur() {
+  console.log("trigger blur");
+  const password = document.getElementById("password");
+  triggerEvent(password, "blur");
+  const passwordCheck = document.getElementById("passwordCheck");
+  triggerEvent(passwordCheck, "blur");
+  const email = document.getElementById("email");
+  triggerEvent(email, "blur");
+}
+
 function App() {
   const userName = "Человек №0123456";
   const [updateDate, setUpdateDate] = useState(new Date());
 
-  function onSubmitForm(event) {
-    event.preventDefault();
+  function onSubmitForm(e) {
+    e.preventDefault();
     setUpdateDate(new Date());
-    const formData = new FormData(event.target);
+
+    triggerBlur();
+
+    const formData = new FormData(e.target);
     const obj = {};
     formData.forEach((value, key) => (obj[key] = value));
     const jsonFormData = JSON.stringify(obj);

@@ -12,6 +12,7 @@ function InputWithLabels(props) {
     onBlur,
     errorMsg,
     isValid,
+    id,
   } = props;
   return (
     <div className="form-group">
@@ -25,6 +26,7 @@ function InputWithLabels(props) {
           onChange={onChange}
           onKeyDown={blurOnEnter}
           onBlur={onBlur}
+          id={id}
         />
         <p style={{ opacity: isValid ? "0" : "1" }}>{errorMsg}</p>
       </label>

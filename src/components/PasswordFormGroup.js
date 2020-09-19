@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputWithLabels from "./InputWithLabels";
 
-function PasswordFormGroup() {
+function PasswordFormGroup(props) {
   const [password, setPassword] = useState("");
 
   const [errMsg1, setErrMsg1] = useState("Укажите пароль");
@@ -47,6 +47,7 @@ function PasswordFormGroup() {
         onBlur={validatePassword}
         errorMsg={errMsg1}
         isValid={isValid1}
+        id="password"
       />
       <InputWithLabels
         type="password"
@@ -55,6 +56,7 @@ function PasswordFormGroup() {
         onBlur={validatePasswordCheck}
         errorMsg={errMsg2}
         isValid={isValid2}
+        id="passwordCheck"
       />
     </div>
   );
