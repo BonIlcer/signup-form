@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/App.scss";
 import HeaderFormGroup from "./HeaderFormGroup";
 import PasswordFormGroup from "./PasswordFormGroup";
-import SelectCity from "./SelectCity";
+import SelectCityFormGroup from "./SelectCityFormGroup";
 
 function App() {
   const userName = "Человек №0123456";
@@ -14,14 +14,14 @@ function App() {
     const formData = new FormData(event.target);
     const obj = {};
     formData.forEach((value, key) => (obj[key] = value));
-
-    console.log(JSON.stringify(obj));
+    const jsonFormData = JSON.stringify(obj);
+    console.log(jsonFormData);
   }
   return (
     <div className="App">
       <form onSubmit={onSubmitForm}>
         <HeaderFormGroup userName={userName} />
-        <SelectCity />
+        <SelectCityFormGroup />
         <hr />
         <PasswordFormGroup />
         <hr />

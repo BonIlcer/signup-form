@@ -12,9 +12,9 @@ function requiredList() {
   return result;
 }
 
-function SelectCity() {
+function SelectCityFormGroup() {
   const cityList = requiredList();
-  console.log("Required list of cities:\n", cityList);
+  //console.log("Required list of cities:\n", cityList);
   const options = cityList.map((item) => (
     <option key={item.city}>{item.city}</option>
   ));
@@ -28,4 +28,4 @@ function SelectCity() {
   );
 }
 
-export default SelectCity;
+export default SelectCityFormGroup;
