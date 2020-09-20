@@ -19,9 +19,9 @@ function SelectCityFormGroup() {
     <option key={item.city}>{item.city}</option>
   ));
   return (
-    <div>
+    <div className="form-group">
       <label>
-        Город
+        <p className="label-text">Ваш город</p>
         <select name="city">{options}</select>
       </label>
     </div>

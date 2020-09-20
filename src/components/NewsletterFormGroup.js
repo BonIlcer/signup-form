@@ -3,7 +3,7 @@ import InputWithLabels from "./InputWithLabels";
 
 function NewsletterFormGroup() {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", alignItems: "center" }}>
       <InputWithLabels
         type="checkbox"
         text="Я согласен"

@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/HeaderFormGroup.scss";
 import blurOnEnter from "../inputBlurOnEnter";
 
 function HeaderFormGroup({ userName }) {
+  const [status, setStatus] = useState("Прежде чем действовать, надо понять");
+  function statusOnChange(e) {
+    setStatus(e.target.value);
+  }
   return (
-    <header className="App-header">
-      <h2>
-        <span style={{ color: "#666" }}>Здравствуйте, </span>
-        {userName}
-      </h2>
+    <div className="header">
+      <span
+        className="header-text"
+        style={{ color: "#666", minWidth: "200px" }}
+      >
+        Здравствуйте,{" "}
+      </span>
+      <div style={{ display: "grid" }}>
+        <p className="header-text">{userName}</p>
+        <label className="status-label" htmlFor="status">
+          сменить статус
+        </label>
 
-      <input
-        id="status"
-        name="status"
-        type="textarea"
-        onKeyDown={blurOnEnter}
-        onBlur={() => console.log("Status blur event")}
-      ></input>
-      <label htmlFor="status">сменить статус</label>
-    </header>
+        <div className="triangle" />
+        <input
+          className="status-input"
+          id="status"
+          name="status"
+          type="textarea"
+          onKeyDown={blurOnEnter}
+          value={status}
+          onChange={statusOnChange}
+        />
+      </div>
+    </div>
   );
 }
 

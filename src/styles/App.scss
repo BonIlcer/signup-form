@@ -1,5 +1,8 @@
 .App {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-header {
@@ -11,5 +14,35 @@
 }
 
 hr {
+  border: 1px solid #e5e4e4;
+}
+
+.form-group {
   margin: 20px 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+select {
+  width: 200px;
+  height: 25px;
+}
+
+input[type="password"],
+input[type="text"] {
+  width: 200px;
+  height: 25px;
+}
+
+.button {
+  background-color: #71c838; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
 }

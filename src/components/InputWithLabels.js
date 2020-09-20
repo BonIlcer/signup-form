@@ -17,21 +17,26 @@ function InputWithLabels(props) {
   return (
     <div className="form-group">
       <label>
-        {text}
-        <input
-          // required
-          autoComplete="off"
-          type={type}
-          name={inputName}
-          onChange={onChange}
-          onKeyDown={blurOnEnter}
-          onBlur={onBlur}
-          id={id}
-        />
-        <p style={{ opacity: isValid ? "0" : "1" }}>{errorMsg}</p>
+        <p className="label-text">{text}</p>
+        <div>
+          <input
+            style={{ border: isValid ? "1px solid black" : "1px solid red" }}
+            // required
+            autoComplete="off"
+            type={type}
+            name={inputName}
+            onChange={onChange}
+            onKeyDown={blurOnEnter}
+            onBlur={onBlur}
+            id={id}
+          />
+          <p className="error" style={{ opacity: isValid ? "0" : "1" }}>
+            {errorMsg}
+          </p>
+        </div>
       </label>
 
-      <p>{note}</p>
+      <p className="note">{note}</p>
     </div>
   );
 }

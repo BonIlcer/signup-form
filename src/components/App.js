@@ -6,6 +6,7 @@ import HeaderFormGroup from "./HeaderFormGroup";
 import NewsletterFormGroup from "./NewsletterFormGroup";
 import PasswordFormGroup from "./PasswordFormGroup";
 import SelectCityFormGroup from "./SelectCityFormGroup";
+import useWindowSize from "../useWindowSize";
 
 function triggerBlur() {
   console.log("trigger blur");
@@ -20,6 +21,7 @@ function triggerBlur() {
 function App() {
   const userName = "Человек №0123456";
   const [updateDate, setUpdateDate] = useState(new Date());
+  const { width } = useWindowSize();
 
   function onSubmitForm(e) {
     e.preventDefault();
@@ -33,6 +35,7 @@ function App() {
     const jsonFormData = JSON.stringify(obj);
     console.log(jsonFormData);
   }
+
   return (
     <div className="App">
       <form onSubmit={onSubmitForm}>
@@ -45,18 +48,28 @@ function App() {
 
         <NewsletterFormGroup />
 
-        <input type="submit" value="Изменить" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginLeft: width > 700 ? "200px" : "0px",
+          }}
+        >
+          <input className="button" type="submit" value="Изменить" />
 
-        <p>
-          {"последние изменения " +
-            updateDate.toLocaleString("ru", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            }) +
-            " в " +
-            updateDate.toLocaleTimeString()}
-        </p>
+          <p
+            style={{ marginLeft: "20px", color: "#999999", fontSize: "0.6em" }}
+          >
+            {"последние изменения " +
+              updateDate.toLocaleString("ru", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              }) +
+              " в " +
+              updateDate.toLocaleTimeString()}
+          </p>
+        </div>
       </form>
     </div>
   );
